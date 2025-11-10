@@ -118,11 +118,11 @@ const Dashboard = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ minHeight: '100vh', bgcolor: '#f0fdf4', py: 4, px: { xs: 2, sm: 3, md: 4 } }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'oklch(26.6% 0.065 152.934)', py: 4, px: { xs: 2, sm: 3, md: 4 } }}>
         <Box sx={{ maxWidth: '1400px', mx: 'auto' }}>
           {/* Header */}
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-            <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#1f2937' }}>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#fff' }}>
               User Dashboard
             </Typography>
             <Button
@@ -157,13 +157,13 @@ const Dashboard = () => {
             <TableContainer>
               <Table>
                 <TableHead>
-                  <TableRow sx={{ bgcolor: '#86efac' }}>
-                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}>#</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}>Name</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}>Date Created</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}>Role</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}>Status</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}>Action</TableCell>
+                  <TableRow sx={{ bgcolor: 'oklch(52.7% 0.154 150.069)' }}>
+                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}><Typography sx={{color: '#fff'}}>#</Typography></TableCell>
+                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}><Typography sx={{color: '#fff'}}>Name</Typography></TableCell>
+                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}><Typography sx={{color: '#fff'}}>Date Created</Typography></TableCell>
+                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}><Typography sx={{color: '#fff'}}>Role</Typography></TableCell>
+                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}><Typography sx={{color: '#fff'}}>Status</Typography></TableCell>
+                    <TableCell sx={{ fontWeight: 'bold', color: '#1f2937' }}><Typography sx={{color: '#fff'}}>Action</Typography></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

@@ -83,10 +83,10 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center md:bg-green-200 px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-md w-full space-y-8 md:bg-green-50 md:m-4 md:p-12 md:shadow-2xl p-4 rounded-3xl">
+    <div className="min-h-screen flex items-center justify-center bg-green-950 px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-md w-full space-y-8 md:m-4 md:p-12 bg-linear-to-b from-green-700 to-green-900 inset-shadow-sm inset-shadow-green-400 p-4 rounded-3xl">
         <div>
-          <h2 className="text-center text-3xl font-bold text-gray-900">
+          <h2 className="text-center text-3xl font-bold text-white">
             Create Account
           </h2>
         </div>
@@ -96,7 +96,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-100"
               >
                 Full Name
               </label>
@@ -108,8 +108,8 @@ const Register = () => {
                 value={formData.name}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.name ? "border-red-500" : "border-none"
-                } rounded-3xl focus:outline-none focus:ring-black inset-shadow-sm inset-shadow-green-200`}
+                  errors.name ? "border-red-500" : "border-green-400"
+                } rounded-3xl focus:outline-none  focus:ring-black bg-green-100 inset-shadow-sm inset-shadow-green-800`}
                 placeholder="Enter your full name"
               />
               {errors.name && (
@@ -120,7 +120,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="dob"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-100"
               >
                 Date of Birth
               </label>
@@ -131,18 +131,24 @@ const Register = () => {
                 value={formData.dob}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.dob ? "border-red-500" : "border-none"
-                } rounded-3xl focus:outline-none focus:ring-black inset-shadow-sm inset-shadow-green-200 text-gray-500`}
+                  errors.dob ? "border-red-500" : "border-green-400"
+                } rounded-3xl focus:outline-none  focus:ring-black bg-green-100 inset-shadow-sm inset-shadow-green-800 [&::-webkit-calendar-picker-indicator]:opacity-50 ${
+                  formData.dob
+                    ? "text-black"
+                    : `[&::-webkit-datetime-edit-text]:text-neutral-500 
+          [&::-webkit-datetime-edit-month-field]:text-neutral-500 
+          [&::-webkit-datetime-edit-day-field]:text-neutral-500 
+          [&::-webkit-datetime-edit-year-field]:text-neutral-500`
+                }`}
               />
               {errors.dob && (
                 <p className="mt-1 text-sm text-red-600">{errors.dob}</p>
               )}
             </div>
-
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-100"
               >
                 Email address
               </label>
@@ -154,8 +160,8 @@ const Register = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.email ? "border-red-500" : "border-none"
-                } rounded-3xl focus:outline-none focus:ring-black inset-shadow-sm inset-shadow-green-200`}
+                  errors.email ? "border-red-500" : "border-green-400"
+                } rounded-3xl focus:outline-none  focus:ring-black bg-green-100 inset-shadow-sm inset-shadow-green-800 `}
                 placeholder="Enter your email"
               />
               {errors.email && (
@@ -166,7 +172,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-100"
               >
                 Password
               </label>
@@ -178,8 +184,8 @@ const Register = () => {
                 value={formData.password}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.password ? "border-red-500" : "border-none"
-                } rounded-3xl focus:outline-none focus:ring-black inset-shadow-sm inset-shadow-green-200`}
+                  errors.password ? "border-red-500" : "border-green-400"
+                } rounded-3xl focus:outline-none  focus:ring-black bg-green-100 inset-shadow-sm inset-shadow-green-800 `}
                 placeholder="Create a password"
               />
               {errors.password && (
@@ -190,7 +196,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="confirmPassword"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-100"
               >
                 Confirm Password
               </label>
@@ -202,8 +208,8 @@ const Register = () => {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.confirmPassword ? "border-red-500" : "border-none"
-                } rounded-3xl focus:outline-none focus:ring-black inset-shadow-sm inset-shadow-green-200`}
+                  errors.confirmPassword ? "border-red-500" : "border-green-400"
+                } rounded-3xl focus:outline-none  focus:ring-black bg-green-100 inset-shadow-sm inset-shadow-green-800 `}
                 placeholder="Confirm your password"
               />
               {errors.confirmPassword && (
@@ -224,18 +230,18 @@ const Register = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl shadow-sm text-sm font-medium bg-green-300 hover:bg-green-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl shadow-sm text-sm font-medium bg-green-500 hover:bg-green-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed transition-colors inset-shadow-sm inset-shadow-green-300"
             >
               {loading ? "Creating account..." : "Create Account"}
             </button>
           </div>
 
           <div className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-300">
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="font-medium text-green-500 hover:text-green-600 underline"
+                className="font-medium text-green-400 hover:text-green-300"
               >
                 Sign in here
               </Link>

@@ -76,10 +76,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center md:bg-green-200 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 md:bg-green-50 md:m-4 md:p-12  md:shadow-2xl p-4 rounded-3xl">
+    <div className="min-h-screen flex items-center justify-center bg-green-950 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 md:m-4 md:p-12  md:shadow-2xl p-4 rounded-3xl backdrop-blur-lg bg-linear-to-b from-green-700 to-green-900 inset-shadow-sm inset-shadow-green-400">
         <div>
-          <h2 className="text-center text-3xl font-bold text-gray-900">
+          <h2 className="text-center text-3xl font-bold text-neutral-50">
             Sign In
           </h2>
         </div>
@@ -87,7 +87,7 @@ const Login = () => {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-neutral-100">
                 Email address
               </label>
               <input
@@ -98,8 +98,8 @@ const Login = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.email ? 'border-red-500' : 'border-none'
-                } rounded-3xl focus:outline-none  focus:ring-black inset-shadow-sm inset-shadow-green-200`}
+                  errors.email ? 'border-red-500' : 'border-green-400'
+                } rounded-3xl focus:outline-none  focus:ring-black bg-green-100 inset-shadow-sm inset-shadow-green-800 `}
                 placeholder="Enter your email"
               />
               {errors.email && (
@@ -108,7 +108,7 @@ const Login = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-medium text-neutral-100">
                 Password
               </label>
               <input
@@ -119,8 +119,8 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.email ? 'border-red-500' : 'border-none'
-                } rounded-3xl focus:outline-none  focus:ring-black inset-shadow-sm inset-shadow-green-200 `}
+                  errors.email ? 'border-red-500' : 'border-green-400'
+                } rounded-3xl focus:outline-none  focus:ring-black bg-green-100 inset-shadow-sm inset-shadow-green-800 shadow-3xl`}
                 placeholder="Enter your password"
               />
               {errors.password && (
@@ -137,9 +137,9 @@ const Login = () => {
                 type="checkbox"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                className="h-4 w-4 border-gray-300 rounded cursor-pointer accent-green-300"
+                className="h-4 w-4 border-gray-300 rounded cursor-pointer accent-green-400 "
               />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700 cursor-pointer">
+              <label htmlFor="remember-me" className="ml-2 block text-sm text-neutral-100 cursor-pointer">
                 Remember me
               </label>
             </div>
@@ -148,7 +148,7 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => alert('Forgot password functionality is work in progress')}
-                className="font-medium text-green-500 hover:text-green-600 underline"
+                className="font-medium text-green-400 hover:text-green-300"
               >
                 Forgot password?
               </button>
@@ -165,18 +165,18 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl shadow-sm text-sm font-medium bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl text-sm font-medium bg-green-500 hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-2xl inset-shadow-sm inset-shadow-green-300"
             >
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </div>
 
           <div className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-300">
               Don't have an account?{' '}
               <Link
                 to="/register"
-                className="font-medium text-green-500 hover:text-green-600 underline"
+                className="font-medium text-green-400 hover:text-green-300"
               >
                 Register here
               </Link>
